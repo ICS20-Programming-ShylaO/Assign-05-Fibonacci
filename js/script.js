@@ -17,36 +17,23 @@ function calculateFibonacci () {
   let response = "";
   let specialResponse = "";
   // special response for when user enters an integer greater than or equal to 31
-  if (maxTermNum >= 31) {
-    specialResponse = "The ending number of this sequence exceeds one million!";
-  }
-  // response for when user doesn't enter an integer
   if (isNaN(maxTermNum)) {
     response = "Please enter a valid integer.";
   }
+  // response for when user doesn't enter an integer
+  else if (maxTermNum >= 31) {
+    specialResponse = "The ending number of this sequence exceeds one million!"
+  }
   // response for when user doesn't enter a positive integer
-  else if (maxTermNum <= 0) { 
-    response = "Please enter an integer greater than zero.";
+  else if (maxTermNum < 0) { 
+    response = "Please enter an integer greater than -1.";
   }
   // else to start the loop
   else {
     // initializing variables for the loop: first term being 0, next term being 1, and the currentTerm equals to 0
-  let previousTerm = parseInt(document.getElementById('starting-seq-num').value);
-  let nextTerm = 0;
-    if (previousTerm == 3) {
-      nextTerm = 5;
-    }
-    else if (previousTerm == 2) {
-      nextTerm = 3;
-    }
-    else if (previousTerm == 1) {
-      nextTerm = 2;
-    }
-    else {
-      nextTerm = 1;
-    }
+  let previousTerm = 0;
+  let nextTerm = 1;
   let currentTerm = 0;
-
     // for loop to calculate the fibonacci sequence starting from 0, ending with max term
     for (let counter = 0; counter <= maxTermNum; counter++) {
         //ending the response once counter == maxTermNum
@@ -65,7 +52,7 @@ function calculateFibonacci () {
       // following rules of the sequence: current term/sum becomes the next term
       nextTerm = currentTerm;
   }
-
+  }
       
   // display fibonacci sequence to user, different answers depending on if user enters valid input or invalid input
 
