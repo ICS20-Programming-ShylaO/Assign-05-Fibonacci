@@ -13,7 +13,7 @@
 function calculateFibonacci () {
   // initializing variable for max term given by user
   let maxTermNum = parseInt(document.getElementById('final-term').value)
-  // intializing response variables for displaying info
+  // initializing response variables for displaying info
   let response = "";
   let specialResponse = "";
   // special response for when user enters an integer greater than or equal to 31

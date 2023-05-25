@@ -1,2 +1,2 @@
 # Assign-05-Fibonacci
-[![GitHub's Super Linter](https://github.com/ICS20-Programming-ShylaO/Assign-05-Fibonacci/workflows/GitHub's%20Super%20Linter/badge.svg)](https://github.com/ICS20-Programming-ShylaO/Assign-05-Fibonacci/actions)
+[![GitHub's Super Linter](https://github.com/ICS20-Programming-ShylaO/Assign-05-HTML-Fibonacci/workflows/GitHub's%20Super%20Linter/badge.svg)](https://github.com/ICS20-Programming-ShylaO/Assign-05-HTML-Fibonacci/actions)
