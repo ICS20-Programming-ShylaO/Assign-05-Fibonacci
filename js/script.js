@@ -10,41 +10,54 @@
  * This function calculates and displays the fibonacci sequence given the final term
  */
 
-function CalculateFibonacci () {
+function calculateFibonacci () {
   // initializing variable for max term given by user
   let maxTermNum = parseInt(document.getElementById('final-term').value)
   // intializing response variables for displaying info
   let response = "";
   let specialResponse = "";
+  // special response for when user enters an integer greater than or equal to 31
+  if (maxTermNum >= 31) {
+    specialResponse = "The ending number of this sequence exceeds one million!";
+  }
   // response for when user doesn't enter an integer
   if (isNaN(maxTermNum)) {
-    response = "Please enter a valid integer."
+    response = "Please enter a valid integer.";
   }
   // response for when user doesn't enter a positive integer
   else if (maxTermNum <= 0) { 
-    response = "Please enter an integer greater than zero."
-  }
-  // special response for when user enters an integer greater than or equal to 31
-  else if (maxTermNum >= 31) {
-    specialResponse = "The ending number of this sequence exceeds one million!"
+    response = "Please enter an integer greater than zero.";
   }
   // else to start the loop
   else {
     // initializing variables for the loop: first term being 0, next term being 1, and the currentTerm equals to 0
-  let nextTerm = 1;
-  let previousTerm = 0;
+  let previousTerm = parseInt(document.getElementById('starting-seq-num').value);
+  let nextTerm = 0;
+    if (previousTerm == 3) {
+      nextTerm = 5;
+    }
+    else if (previousTerm == 2) {
+      nextTerm = 3;
+    }
+    else if (previousTerm == 1) {
+      nextTerm = 2;
+    }
+    else {
+      nextTerm = 1;
+    }
   let currentTerm = 0;
 
     // for loop to calculate the fibonacci sequence starting from 0, ending with max term
-    for (let counter = 0; counter <= maxTermNum; counter++){
-      
-      // build the response by using the empty string and adding the previous term and next term
+    for (let counter = 0; counter <= maxTermNum; counter++) {
+        //ending the response once counter == maxTermNum
       if (counter == maxTermNum) {
-        response = response + maxTermNum;
-      } 
-      else {
-        response = response + " + " + previousTerm + " + " + nextTerm;
+        response = response + previousTerm;
       }
+        // build the response by using the empty string and adding the previous term and next term
+      else {
+        response = response + previousTerm + ", "
+      }
+    
       // setting current term to previous term + next term in order to set next term to the current term
       currentTerm = previousTerm + nextTerm;
       // previous term turns to next term as per rules of the sequence
@@ -52,8 +65,9 @@ function CalculateFibonacci () {
       // following rules of the sequence: current term/sum becomes the next term
       nextTerm = currentTerm;
   }
+
       
-  // display factorial to user, different answers depending on if user enters valid input or invalid input
+  // display fibonacci sequence to user, different answers depending on if user enters valid input or invalid input
 
     document.getElementById('response').innerHTML = specialResponse;
 
@@ -61,6 +75,6 @@ function CalculateFibonacci () {
     document.getElementById('results').innerHTML = response;
    }
    else {
-    document.getElementById('results').innerHTML = response + " = " + currentTerm;
+    document.getElementById('results').innerHTML = "The Fibonacci sequence of " + maxTermNum + " is " + response;
    }
 }

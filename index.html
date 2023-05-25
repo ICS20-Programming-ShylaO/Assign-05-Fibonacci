@@ -42,17 +42,24 @@
           <tr>
             <th>
               <center>
-              <h5>This program calculates and displays the fibonacci sequence, one of nature's greatest phenomenons, ending on the term of the given integer.</h5><br><img src="./images/fibonacci_visual.png" alt="Numerical Display Fibonacci" width="30%" height="auto"><br>
+              <h5>This program calculates and displays the fibonacci sequence, one of nature's greatest phenomenons, starting on the desired sequence number from zero to thirteen, and ending on the term of the given integer. <br><br>*Please note that the "1" option refers to the repeated "1" in the sequence instead of the first one.</h5><br><img src="./images/fibonacci_visual.png" alt="Numerical Display Fibonacci" width="30%" height="auto"><br>
                 <br><img src="./images/pinecone_fibonacci.jpg" alt="Fibonacci Sequence in Nature" width="30%" height="auto"><br>
               </center>
             </th>
           </tr>
         </table>
                 <!-- Form for the positive integer -->
-        <form action="javascript:CalculateFibonacci()">
+        <form action="javascript:calculateFibonacci()">
           <br>
           <label for="final-term"><p>Term:</p></label>
-          <input type="number" step="1" id="final-term" placeholder="Eg. 4"><br><br>			
+          <input type="number" step="1" id="final-term" placeholder="Eg. 4"><br><br>
+          <label for="starting-seq-num"><p>Starting Sequence Number:</p></label>
+          <select name="starting-seq-num" id="starting-seq-num">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
           <!-- Button -->
           <br><br>
           <center>
@@ -65,13 +72,10 @@
         </form>
           <br>
         <br>
-        <p>
           <!-- Special response for when term >= 31 -->
-        <div id="response">
+        <div id="response"></div>
           <!-- To display the fibonacci sequence -->
           <div id="results"></div>
-        </div>
-        </p>
       </main>
     </div>
   </body>
